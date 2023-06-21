@@ -55,7 +55,7 @@ pipeline {
                         {
                         echo 'Send Email'
                         }
-                    if (env.DEPLOY1 == 'Y') 
+                    else if (env.DEPLOY1 == 'Y') 
                         {
                         echo 'Deploy to Prod'
                         }

@@ -6,7 +6,6 @@ pipeline {
 	environment{
          IMAGE = readMavenPom().getArtifactId() 
 	 def pom = readMavenPom file: 'pom.xml'
- 	 echo "${pom.version}"
 	 def version = sh script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true
          }
     stages {
@@ -51,7 +50,7 @@ pipeline {
             }
             steps {				
                 
-            	echo "${IMAGE}"
+            	echo "${IMAGE},${pom},${version}"
                script {
                         timeout(time: 600, unit: 'SECONDS') {
                     script {

@@ -6,7 +6,7 @@ pipeline {
 	environment{
          IMAGE = readMavenPom().getArtifactId() 
 	 def pom = readMavenPom file: 'pom.xml'
-	 def DEPLOY = "${pom.properties}"
+	 def DEPLOY = "${pom.properties.deploy}"
          }
     stages {
         stage ('Deploy to Dev') {

@@ -45,7 +45,7 @@ pipeline {
                 BASIC_AUTH = credentials('basicAuth_og_appsurvey_sapi_cred')              
             }
             when {
-                expression { GIT_BRANCH ==~ /(origin\/master)/ }
+                expression { GIT_BRANCH ==~ /(origin\/main)/ }
             }
             steps {				
                 

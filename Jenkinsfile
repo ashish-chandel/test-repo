@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven "MAVEN_HOME"
+        maven "Maven"
     }
 	environment{
          IMAGE = readMavenPom().getArtifactId()     
@@ -57,11 +57,11 @@ pipeline {
                 BASIC_AUTH = credentials('basicAuth_og_appsurvey_sapi_cred')              
             }
             when {
-                expression { GIT_BRANCH ==~ /(origin\/main)/ }
+                expression { GIT_BRANCH ==~ /(origin\/master)/ }
             }
             steps {				
                 
-            	emailext to: env.APPROVAL_EMAIL, subject: 'New build is waiting for your decision', body: 'Please make your decision about new build in Jenkins! \n\n Click on below link to redirect to approval page:- \n ${BUILD_URL}input/', attachLog: true
+            	echo "${IMAGE}"
                script {
                         timeout(time: 600, unit: 'SECONDS') {
                     script {

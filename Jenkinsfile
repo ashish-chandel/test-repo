@@ -6,6 +6,7 @@ pipeline {
 	environment{
          IMAGE = readMavenPom().getArtifactId() 
 	 def pom = readMavenPom file: 'pom.xml'
+	 DEPLOY = pom.properties
          }
     stages {
         stage ('Deploy to Dev') {
@@ -49,7 +50,7 @@ pipeline {
             }
             steps {				
                 
-            	echo "${IMAGE},${pom.properties}"
+            	echo "${IMAGE},${DEPLOY}"
                script {
                         timeout(time: 600, unit: 'SECONDS') {
                     script {

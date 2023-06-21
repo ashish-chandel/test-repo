@@ -4,10 +4,7 @@ pipeline {
         maven "MAVEN_HOME"
     }
 	environment{
-         IMAGE = readMavenPom().getArtifactId() 
-	 DEPLOY1 = readMavenPom().getProperties().getProperty('deploy')
-	 def pom = readMavenPom file: 'pom.xml'
-	 def DEPLOY = "${pom.properties.deploy}"
+         IMAGE = readMavenPom().getArtifactId()
          }
     stages {
         stage ('Deploy to Dev') {
@@ -44,18 +41,19 @@ pipeline {
 		    environment {
                 MULE_KEY = credentials('mule.PRODkey')
                 ANYPOINT_CREDENTIALS = credentials('anypoint_connectedapp')
-                NEXUS_CRDS = credentials('nexus_crds')       
+                NEXUS_CRDS = credentials('nexus_crds') 
+		DEPLOY = readMavenPom().getProperties().getProperty('deploy')
             }
             when {
                 expression { GIT_BRANCH ==~ /(origin\/main)/ }
             }
             steps {
                 script {
-                    if (env.DEPLOY1 == 'N') 
+                    if (env.DEPLOY == 'N') 
                         {
-                        echo 'Send Email'
+                        echo 'Send Email that Build is ready'
                         }
-                    else if (env.DEPLOY1 == 'Y') 
+                    else if (env.DEPLOY == 'Y') 
                         {
                         echo 'Deploy to Prod'
                         }

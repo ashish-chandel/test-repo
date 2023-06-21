@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<hir:HireC
+	xmlns:hir="http://xmlns.oracle.com/Enterprise/Tools/schemas/HireC.V1">
+    <hir:HireCan>
+        <hir1:HireApplicant class="R"
+			xmlns:hir1="http://xmlns.oracle.com/Enterprise/Tools/schemas/HireCan.V1">
+            <hir1:candidate_id>6719380</hir1:candidate_id>
+            <hir1:national_id>353660859</hir1:national_id>
+            <hir1:classification>EMP</hir1:classification>
+            <hir1:first_name>Joseph</hir1:first_name>
+            <hir1:middle_name>C</hir1:middle_name>
+            <hir1:last_name>Petryka</hir1:last_name>
+            <hir1:gender>M</hir1:gender>
+            <hir1:job_code>900</hir1:job_code>
+            <hir1:birthdate>1969-02-14</hir1:birthdate>
+            <hir1:hiredate>2023-01-04</hir1:hiredate>
+            <hir1:mar_status>U</hir1:mar_status>
+            <hir1:military_status>Z</hir1:military_status>
+            <hir1:ethnic_group>1</hir1:ethnic_group>
+            <hir1:disability_status>X</hir1:disability_status>
+            <hir1:address class="R">
+                <hir1:type>HOME</hir1:type>
+                <hir1:address1>8453 Roanoke Dr</hir1:address1>
+                <hir1:city>St. Louis</hir1:city>
+                <hir1:state>MO</hir1:state>
+                <hir1:postal>63121</hir1:postal>
+                <hir1:country>USA</hir1:country>
+            </hir1:address>
+            <hir1:address class="R">
+                <hir1:type>MAIL</hir1:type>
+                <hir1:address1>8453 Roanoke Dr</hir1:address1>
+                <hir1:city>St. Louis</hir1:city>
+                <hir1:state>MO</hir1:state>
+                <hir1:postal>63121</hir1:postal>
+                <hir1:country>USA</hir1:country>
+            </hir1:address>
+            <hir1:email_addr class="R">
+                <hir1:e_addr_type>HOME</hir1:e_addr_type>
+                <hir1:email>jpetryka@gmail.com</hir1:email>
+            </hir1:email_addr>
+            <hir1:email_addr class="R">
+                <hir1:e_addr_type>HOME</hir1:e_addr_type>
+                <hir1:email>jpetryka@gmail.com</hir1:email>
+            </hir1:email_addr>
+            <hir1:fo_empl_data_phn class="R">
+                <hir1:phone_type>HOME</hir1:phone_type>
+                <hir1:phone>3147661368</hir1:phone>
+            </hir1:fo_empl_data_phn>
+        </hir1:HireApplicant>
+    </hir:HireCan>
+</hir:HireC>

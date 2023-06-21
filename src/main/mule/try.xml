@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8b5aa0c4-433b-45dd-b35f-d7ccf90070d0" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="5071bc60-8f1f-4dcb-9b7e-8190a9df0b51" >
+		<salesforce:jwt-connection consumerKey="3MVG9g9rbsTkKnAUk.kIM2EfYcKSV.gaYCpKk0VaWtmCUAmeX4slvgJh2SRLeeZ.nIC7arYWRXtJmsxAct38t" keyStore="C:\WorkSpace\AnypointStudio\oxfordGlobal\try\src\main\resources\mulesoft (1).jks" storePassword="v7O&amp;fP7!kakJKEgslrbdYD#j" certificateAlias="mulesoft" principal="mulesoftintegration@oxfordcorp.com" />
+	</salesforce:sfdc-config>
+	<flow name="tryFlow" doc:id="2070a133-cf79-4023-aa46-a7a91862efd6" >
+		<http:listener doc:name="Listener" doc:id="5a5778ec-289a-4677-8719-d1d11e8cbecd" config-ref="HTTP_Listener_config" path="/try"/>
+		<set-payload value='#[%dw 2.0&#10;output application/json &#10;---&#10;{&#10;    "InvDis": "abc",&#10;    "TimeCard": "N"&#10;}]' doc:name="Set Payload" doc:id="50ba6a99-63c7-4b89-9e5e-e9acdf78b840" />
+		<ee:transform doc:name="Transform Message" doc:id="86fad737-6e22-4dac-98b9-338c1409f563" >
+			<ee:message >
+				<ee:set-payload resource="module/hireMapping.dwl" />
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="8c954325-2ad7-4701-bebd-27d2545e7382" />
+	</flow>
+</mule>

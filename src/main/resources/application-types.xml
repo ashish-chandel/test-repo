@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="asas" format="json">
+      <types:shape format="weave" example="pay.json"><![CDATA[%dw 2.0
+
+type asas = {|
+  phone: Array<{|    phone: String,     "type": String  |}>, 
+  email: Array<{|    email: String,     "type": String  |}>, 
+  address: Array<{|    country: String,     postal: String,     state: String,     city: String,     address3: String,     address2: String,     address1: String,     "type": String  |}>, 
+  hiredate: String, 
+  birthdate: String, 
+  "vet-status": String, 
+  gender: String, 
+  lastname: String, 
+  middlename: String, 
+  firstname: String, 
+  ethnicity: String, 
+  "disability-status": String, 
+  "assignment-id": String, 
+  "name-prefix": String, 
+  classification: String, 
+  "national-id": String, 
+  "marital-status": String, 
+  "candidate-id": String
+|} {"example": "{\\\"phone\\\":[{\\\"phone\\\":\\\"813\\/408-1623\\\",\\\"type\\\":\\\"HOME\\\"}],\\\"email\\\":[{\\\"email\\\":\\\"pierre.tran@cybercoders.com\\\",\\\"type\\\":\\\"HOME\\\"},{\\\"email\\\":\\\"pierre.tran@cybercoders.com\\\",\\\"type\\\":\\\"HOME\\\"}],\\\"address\\\":[{\\\"country\\\":\\\"CAN\\\",\\\"postal\\\":\\\"S4T 2A3\\\",\\\"state\\\":\\\"SK\\\",\\\"city\\\":\\\"Regina\\\",\\\"address3\\\":\\\"\\\",\\\"address2\\\":\\\"411\\\",\\\"address1\\\":\\\"411-2203 Angus St\\\",\\\"type\\\":\\\"HOME\\\"},{\\\"country\\\":\\\"USA\\\",\\\"postal\\\":\\\"36526\\\",\\\"state\\\":\\\"Alabama\\\",\\\"city\\\":\\\"Daphne\\\",\\\"address3\\\":\\\"\\\",\\\"address2\\\":null,\\\"address1\\\":\\\"553 Stuart St\\\",\\\"type\\\":\\\"MAIL\\\"}],\\\"hiredate\\\":\\\"2021-06-21\\\",\\\"birthdate\\\":\\\"1962-04-01\\\",\\\"vet-status\\\":\\\"I am not a veteran. (I did not serve in the military.)\\\",\\\"gender\\\":\\\"F\\\",\\\"lastname\\\":\\\"KASSER\\\",\\\"middlename\\\":\\\"A\\\",\\\"firstname\\\":\\\"MARY\\\",\\\"ethnicity\\\":\\\"White (not Hispanic or Latino)\\\",\\\"disability-status\\\":\\\"No\\\",\\\"assignment-id\\\":\\\"6400198\\\",\\\"name-prefix\\\":\\\"\\\",\\\"classification\\\":\\\"EMP\\\",\\\"national-id\\\":\\\"608955220\\\",\\\"marital-status\\\":\\\"U\\\",\\\"candidate-id\\\":\\\"3402297\\\"}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="xmlhire" format="xml">
+      <types:example format="xml" element="{http://xmlns.oracle.com/Enterprise/Tools/schemas/HireC.V1}HireC" location="output.xml"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#86fad737-6e22-4dac-98b9-338c1409f563">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="xmlhire"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

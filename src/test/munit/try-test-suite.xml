@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="try-test-suite.xml" />
+	<munit:test name="try-test-suite-tryFlowTest" doc:id="76580fc6-fcd8-49fb-98f5-b1811fc07de2" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to tryFlow" doc:id="e7f45b9b-2a7b-4c76-baaa-adcff67bbbd4" name="tryFlow"/>
+		</munit:execution>
+	</munit:test>
+
+
+</mule>

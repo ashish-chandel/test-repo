@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "United States",
+    "Code": "USA"
+  },
+  {
+    "Name": "United States Of America",
+    "Code": "USA"
+  },
+  {
+    "Name": "US",
+    "Code": "USA"
+  },
+  {
+    "Name": "USA",
+    "Code": "USA"
+  },
+  {
+    "Name": "Canada",
+    "Code": "CAN"
+  },
+  {
+    "Name": "Mexico",
+    "Code": "MEX"
+  },
+  {
+    "Name": "CAN",
+    "Code": "CAN"
+  },
+  {
+    "Name": "MEX",
+    "Code": "MEX"
+  }
+]

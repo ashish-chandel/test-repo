@@ -1,0 +1,55 @@
+{
+  "phone": [
+    {
+      "phone": "813/408-1623",
+      "type": "HOME"
+    }
+  ],
+  "email": [
+    {
+      "email": "pierre.tran@cybercoders.com",
+      "type": "HOME"
+    },
+    {
+      "email": "pierre.tran@cybercoders.com",
+      "type": "HOME"
+    }
+  ],
+  "address": [
+    {
+      "country": "CAN",
+      "postal": "S4T 2A3",
+      "state": "SK",
+      "city": "Regina",
+      "address3": "",
+      "address2": "411",
+      "address1": "411-2203 Angus St",
+      "type": "HOME"
+    },
+    {
+      "country": "USA",
+      "postal": "36526",
+      "state": "Alabama",
+      "city": "Daphne",
+      "address3": "",
+      "address2": null,
+      "address1": "553 Stuart St",
+      "type": "MAIL"
+    }
+  ],
+  "hiredate": "2021-06-21",
+  "birthdate": "1962-04-01",
+  "vet-status": "I am not a veteran. (I did not serve in the military.)",
+  "gender": "F",
+  "lastname": "KASSER",
+  "middlename": "A",
+  "firstname": "MARY",
+  "ethnicity": "White (not Hispanic or Latino)",
+  "disability-status": "No",
+  "assignment-id": "6400198",
+  "name-prefix": "",
+  "classification": "EMP",
+  "national-id": "608955220",
+  "marital-status": "U",
+  "candidate-id": "3402297"
+}

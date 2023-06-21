@@ -1,0 +1,61 @@
+{
+  "phone": [
+    {
+      "phone": "(475)-220-6056",
+      "type": "ipsa"
+    },
+    {
+      "phone": "(663)-131-1413",
+      "type": "minima"
+    }
+  ],
+  "email": [
+    {
+      "email": "Alyssa.Smither@gmail.com",
+      "type": "architecto"
+    },
+    {
+      "email": "Alexis.Smooth@gmail.com",
+      "type": "sit"
+    }
+  ],
+  "address": [
+    {
+      "country": "Malawi",
+      "postal": "vitae",
+      "state": "architecto",
+      "city": "Madrid",
+      "address3": "Geary St 96",
+      "address2": null,
+      "address1": "Second Ave 37",
+      "type": "esse"
+    },
+    {
+      "country": "Burkina Faso",
+      "postal": "nisi",
+      "state": "aliquam",
+      "city": "San Diego",
+      "address3": "Second Ave 99",
+      "address2": null,
+      "address1": "Third St 77",
+      "type": "voluptatem"
+    }
+  ],
+  "hiredate": "velit",
+  "birthdate": "qui",
+  "vet-status": "ea",
+  "gender": "female",
+  "lastname": "Smithson",
+  "jobcode": "exercitationem",
+  "i9date": "dolores",
+  "middlename": "tempor",
+  "firstname": "Allyn",
+  "ethnicity": "Madrid",
+  "disability-status": "voluptas",
+  "assignment-id": "6844d5f8b7ae4a0e9b4",
+  "name-prefix": "labore",
+  "classification": "labore",
+  "national-id": "92246b395b6d4369b3f",
+  "marital-status": "illo",
+  "candidate-id": "bb86b7c408fa4798ac7"
+}

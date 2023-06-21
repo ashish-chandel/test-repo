@@ -49,23 +49,20 @@ pipeline {
             when {
                 expression { GIT_BRANCH ==~ /(origin\/main)/ }
             }
-            steps {				
-                
-            	echo "${IMAGE},${DEPLOY1},${DEPLOY}"
-               script {
-                        timeout(time: 600, unit: 'SECONDS') {
-                    script {
-                        env.RELEASE_TO_PROD = input message: 'User input required',
-                            parameters: [choice(name: 'Promote to production', choices: 'No\nYes', description: 'Choose "Yes" if you want to deploy this build in prduction')]
-                        milestone 1
+            steps {
+                script {
+                    if (env.DEPLOY1 == 'N') 
+                        {
+                        echo 'Send Email'
+                        }
+                    if (env.DEPLOY1 == 'Y') 
+                        {
+                        echo 'Deploy to Prod'
+                        }
+                    else {
+                        echo "Got Unexpected Value ${DEPLOY1}"
+                        }
                     }
-                }
-                        if (env.RELEASE_TO_PROD == "Yes") {
-                            sh 'mvn -P cloudhub -s settings.xml -DskipMunitTests deploy -DmuleDeploy -DUSERNAME=${ANYPOINT_CREDENTIALS_USR} -DPASSWORD=${ANYPOINT_CREDENTIALS_PSW} -DENVIRONMENT=Production -DAPPNAME=${IMAGE}  -DREPLICAS=1 -DVCORES=0.1 -Dkey=${MULE_KEY_PSW} -Denv=prod  -Dhttp.port=8081 -DRUNTIME_VERSION=4.4.0 -Duser=${BASIC_AUTH_USR} -Dpass=${BASIC_AUTH_PSW} -DTARGET=oxford-prod-privatespace'
-                        } else {
-                            echo 'Production Deployment Rejected'
-                            }
-                }
             }
         }
     }

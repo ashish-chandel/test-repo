@@ -41,8 +41,7 @@ pipeline {
 		    environment {
                 MULE_KEY = credentials('mule.PRODkey')
                 ANYPOINT_CREDENTIALS = credentials('anypoint_connectedapp')
-                NEXUS_CRDS = credentials('nexus_crds')
-                BASIC_AUTH = credentials('basicAuth_og_appsurvey_sapi_cred')              
+                NEXUS_CRDS = credentials('nexus_crds')       
             }
             when {
                 expression { GIT_BRANCH ==~ /(origin\/main)/ }
